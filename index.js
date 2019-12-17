@@ -13,7 +13,7 @@ const STORE = [
         correctAnswer: 'All of the above'
     },
     {
-        question: 'What was Erich Klinghammer’s goal in starting Wolf Park?',
+        question: "What was Erich Klinghammer's goal in starting Wolf Park?",
         answers: [
             'Breed more wolves',
             'Create wolf-dog and other hybrids',
