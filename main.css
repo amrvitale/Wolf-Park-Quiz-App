@@ -102,7 +102,7 @@ legend {
 }
 .response {
   display: block;
-  margin auto;
+  margin: auto;
 }
 
 .final {
