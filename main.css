@@ -33,7 +33,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3em;
-    background: url(Images/background.jpg) fixed;
+    background: url(images/background.jpg) fixed;
     border: 2px #4D1B10 solid;
   }
 
@@ -101,8 +101,10 @@ legend {
   border: 1px #cea083 solid;
 }
 .response {
-    display: block;
-    margin: auto;
+  display: block;
+  margin auto;
+}
+
 .final {
   display: block;
   margin-bottom: 0.5em;
