@@ -87,6 +87,7 @@ function resetStats() {
     $('.score').text(0);
     $('.questionNumber').text(0);
   }
+
   function startQuiz() {
     $('.altBox').hide();
     $('.startQuiz').on('click', '.startButton', function (event) {
@@ -123,7 +124,7 @@ function resetStats() {
     let fieldSelector = $(formMaker).find('fieldset');
   
     STORE[questionIndex].answers.forEach(function (answerValue, answerIndex) {
-      $(`<label class="sizeMe" for="${answerIndex}">
+      $(`<label for="${answerIndex}">
           <input class="radio" type="radio" id="${answerIndex}" value="${answerValue}" name="answer" required>
           <span>${answerValue}</span>
         </label>
@@ -176,12 +177,13 @@ function resetStats() {
     ];
   
     const bad = [
-      'Ooof. Ahoooooo! Booo!',
+      'Ouch, you are not ready for this pack.',
+      'Sorry, you need more work before you can join the pack.'
     ];
   
-    if (score >= 8) {
+    if (score >= 5) {
       array = great;
-    } else if (score < 8 && score >= 5) {
+    } else if (score < 5 && score >= 4) {
       array = good;
     } else {
       array = bad;
