@@ -182,19 +182,19 @@ function resetStats() {
       'Ouch, you are not ready for this pack.',
       'Sorry, you need more work before you can join the pack.'
     ];
-  
+    
+    let array;
+
     if (score >= 4) {
-      array = great;
+       array = great;
     } else if (score < 4 && score >= 3) {
-      array = good;
+        array = good;
     } else {
-      array = bad;
+       array = bad;
     }
     return $('.final').html(
       `<h3>${array[0]}</h3>
-        <img src="${array[1]}" alt="${array[2]}" class="images">
           <h3>Your score is ${score} / 5</h3>
-          <p>${array[3]}</p>
           <button type="submit" class="restartButton button">Restart</button>`
     );
   }
