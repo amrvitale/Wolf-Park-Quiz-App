@@ -5,24 +5,193 @@
     border-radius: 1%;
   }
 
-  body {
+body {
     font-family: 'Oswald', sans-serif;
     color: black;
-    background-color: lightgray;
+    background-color: rgb(90, 129, 90);
   }
 
-  .header {
+.header {
     text-align: center;
   }
-  .wolfbanner {
+.wolfbanner {
       max-width: 1000px;
     
   }
+.header li {
+    display: inline-block;
+    margin: 5px;
+    list-style: none;
+    font-size: 15px;
+  }
 
-  .images {
-      max-width: 250px;
-      text-align: center;
+.forestSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+    background: url(images/background.jpg) fixed;
+    border: 2px #4D1B10 solid;
   }
-  .startQuiz {
-      text-align: center;
+
+.startQuiz,
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+    background-color: palegoldenrod;
+    border: 2px #4D1B10 solid;
+
   }
+  
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    cursor: pointer;
+  }
+.images {
+      max-width: 150px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+h1,
+h3,
+legend {
+  margin-bottom: 0.5em;
+}
+.answerOption {
+    margin-top: 0.5em;
+  }
+  
+  .button {
+    margin-left: auto;
+    margin-right: auto;
+    height: 35px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    border: 1px white solid;
+    background-color: red;
+    color: #ffffff;
+  }
+
+.button:hover,
+.button:active {
+  background-color: #0d2a37;
+  color: pink;
+  border: 1px #cea083 solid;
+}
+
+.final {
+  display: block;
+}
+
+@media only screen and (min-width: 320px) {
+    .wolfbanner {
+      width: 45%;
+    }
+  
+    .forestSection {
+      width: 90%;
+      height: 31em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding-top: 0.8em;
+      padding-bottom: 0.8em;
+    }
+  
+    .box {
+      width: 90%;
+      height: 90%;
+    }
+  
+    .images {
+      width: 85%;
+    }
+  
+    .button {
+      margin-top: 0.5em;
+      font-size: 1em;
+      width: 8em;
+      height: 2.5em;
+    }
+  
+    h1,
+    h3,
+    legend {
+      font-size: 1em;
+    }
+  
+    .header li {
+      font-size: 1em;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 550px) {
+    .forestSection {
+      width: 29.5em;
+      height: 31.5em;
+      padding-top: 2.6em;
+      padding-bottom: 2.6em;
+    }
+  
+    .box {
+      width: 85%;
+      height: 98%;
+    }
+  
+    .button {
+      margin-top: 1em;
+      font-size: 1em;
+      width: 10em;
+      height: 2.5em;
+    }
+  
+    h1,
+    h3,
+    legend {
+      font-size: 1em;
+    }
+  
+   
+  }
+  
+  @media only screen and (min-width: 800px) {  
+    .header li {
+      margin: 1em;
+      font-size: 1.3em;
+    }
+  
+    .forestSection {
+      width: 35em;
+      height: 38em;
+    }
+  
+    .box {
+      width: 85%;
+      height: 95%;
+    }
+  
+    h1,
+    h3,
+    legend {
+      font-size: 1.3em;
+    }
+  
+    .button {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      width: 12em;
+      font-size: 1.2em;
+    }
+  }
+  
