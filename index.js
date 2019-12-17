@@ -1,4 +1,5 @@
 //question database
+"use strict";
 const STORE = [
     {
         question: 'Which of the following components is part of the mission of Wolf Park?',
@@ -12,7 +13,7 @@ const STORE = [
         correctAnswer: 'All of the above'
     },
     {
-        question: 'What was Erich Klinghammer’s goal in starting Wolf Park?'
+        question: 'What was Erich Klinghammer’s goal in starting Wolf Park?',
         answers: [
             'Breed more wolves',
             'Create wolf-dog and other hybrids',
@@ -58,16 +59,16 @@ const STORE = [
 ];
 
 let score = 0;
-let questionNumber = 0;
+let numOfTotal = 0;
 
 function generateQuestion() {
-    if (questionNumber < STORE.length) {
-        return createThing(questionNumber);
+    if (numOfTotal < STORE.length) {
+        return createThing(numOfTotal);
     }
     else {
         $('.questionBox').hide();
         finalScore();
-        $('.questionNumber').text(5);
+        $('.numOfTotal').text(5);
     }
 }
 
@@ -77,22 +78,23 @@ function updateScore() {
 }
 
 function updateQuestionNumber() {
-    questionNumber++;
-    $('.questionNumber').text (questionNumber + 1);
+    numOfTotal++;
+    $('.numOfTotal').text (numOfTotal + 1);
+    console.log("updateQuestionNumber() ran")
 }
 
 function resetStats() {
     score = 0;
-    questionNumber = 0;
+    numOfTotal = 0;
     $('.score').text(0);
-    $('.questionNumber').text(0);
+    $('.numOfTotal').text(0);
   }
 
   function startQuiz() {
     $('.altBox').hide();
     $('.startQuiz').on('click', '.startButton', function (event) {
       $('.startQuiz').hide();
-      $('.questionNumber').text(1);
+      $('.numOfTotal').text(1);
       $('.questionBox').show();
       $('.questionBox').prepend(generateQuestion());
     });
@@ -105,7 +107,7 @@ function resetStats() {
       $('.response').show();
       let selected = $('input:checked');
       let answer = selected.val();
-      let correct = STORE[questionNumber].correctAnswer;
+      let correct = STORE[numOfTotal].correctAnswer;
       if (answer === correct) {
         correctAnswer();
       } else {
@@ -149,7 +151,7 @@ function resetStats() {
       `<h3>That's the wrong answer...</h3>
       <img src="Images/incorrect.jpg" alt="embarrassed wolf" class="images" width="200px">
       <p>It's actually:</p>
-      <p>${STORE[questionNumber].correctAnswer}</p>
+      <p>${STORE[numOfTotal].correctAnswer}</p>
       <button type="button" class="nextButton button">Next</button>`
     );
   }
@@ -172,7 +174,7 @@ function resetStats() {
     ];
   
     const good = [
-      'Really, pretty good.',
+      'Really, pretty darn good.',
       'Wolves are awesome, right? Keep it up.'
     ];
   
@@ -181,9 +183,9 @@ function resetStats() {
       'Sorry, you need more work before you can join the pack.'
     ];
   
-    if (score >= 5) {
+    if (score >= 4) {
       array = great;
-    } else if (score < 5 && score >= 4) {
+    } else if (score < 4 && score >= 3) {
       array = good;
     } else {
       array = bad;
