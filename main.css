@@ -33,7 +33,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3em;
-    background: url(Images/background.jpg) fixed;
+    background: url(images/background.jpg) fixed;
     border: 2px #4D1B10 solid;
   }
 
@@ -52,18 +52,25 @@ body {
   }
   .questionBox {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;   
     align-items: center;
     justify-content: center;
     text-align: center;
     margin: auto;
     padding: 10px;
   }
+  input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ 
 label {
     display: block;
     margin-bottom: 0.5em;
     padding: 0.5em;
     cursor: pointer;
+    text-align: center;
   }
 .images {
       max-width: 150px;
